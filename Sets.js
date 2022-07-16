@@ -19,12 +19,11 @@ class mySet {
       // performing a check to find out if the element being passed already exists in the set
       if (!this.has(element)) {
         collection.push(element)
-        // return true;
       } // if the element exits returns an error message
       else {
         console.error(`${element} already exits`)
-        // return false;
       }
+      return this // added this line to enable method chaining
     }
 
     // this method removes the element (passed into it as an argument) from the set
