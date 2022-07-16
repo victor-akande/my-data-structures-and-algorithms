@@ -30,6 +30,14 @@ class Stack {
       return this
     }
 
+    // adds multiple items to the end of the stack
+    this.add = (...values) => {
+      values.forEach((value) => {
+        this.storage[this.count] = value
+        this.count++
+      })
+    }
+
     // removes an item from the end of the stack and returns the removed item
     this.pop = () => {
       if (this.count === 0) {
