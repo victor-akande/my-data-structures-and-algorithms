@@ -17,3 +17,39 @@ for (let i = 0; i < word.length; i++) {
 for (let i = 0; i < word.length; i++) {
   rWord += letters.pop()
 }
+
+class Stack {
+  constructor() {
+    this.count = 0
+    this.storage = {}
+
+    // adds and item to the end of the stack
+    this.push = (value) => {
+      this.storage[this.count] = value
+      this.count++
+      return this
+    }
+
+    // removes an item from the end of the stack and returns the removed item
+    this.pop = () => {
+      if (this.count === 0) {
+        return undefined
+      } else {
+        this.count--
+        let result = this.storage[this.count]
+        delete this.storage[this.count]
+        return result
+      }
+    }
+
+    // returns the size of the stack
+    this.size = () => {
+      return this.count
+    }
+
+    // returns the last item on the stack but does not delete it
+    this.peek = () => {
+      return this.storage[this.count - 1]
+    }
+  }
+}
