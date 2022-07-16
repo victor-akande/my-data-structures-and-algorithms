@@ -55,5 +55,36 @@ class mySet {
         }
       })
     }
+
+    // creates a new set containing items in the already defined set and a set being passed into the method
+    this.union = (anotherSet) => {
+      const unionSet = new mySet()
+      const setOne = this.values()
+      const setTwo = anotherSet.values()
+      setOne.forEach((element) => {
+        unionSet.add(element)
+      })
+      setTwo.forEach((element) => {
+        unionSet.add(element)
+      })
+
+      console.log(unionSet)
+      return unionSet
+    }
+
+    // creates a new set containing items present in the already defined set and a new set being passed into the method
+    this.intersection = (otherSet) => {
+      const intersectionSet = new mySet()
+      const setOne = this.values()
+
+      setOne.forEach((element) => {
+        if (otherSet.has(element)) {
+          intersectionSet.add(e)
+        }
+      })
+
+      console.log(intersectionSet)
+      return intersectionSet
+    }
   }
 }
