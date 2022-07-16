@@ -39,5 +39,21 @@ class mySet {
       console.log(collection.length)
       return collection.length
     }
+
+    // This is a better alternative to the add() method
+    // method allows user to add multiple elements to the set at once (using the spread operator and forEach)
+    this.pushItems = (...elements) => {
+      elements.forEach((element) => {
+        // performing a check to find out if the element being passed already exists in the set
+        if (!this.has(element)) {
+          collection.push(element)
+          return true
+        } // if the element exits returns an error message
+        else {
+          console.error(`${element} already exits`)
+          return false
+        }
+      })
+    }
   }
 }
